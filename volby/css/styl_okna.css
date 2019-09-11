@@ -1,0 +1,7 @@
+.root{
+    -fx-background-image: url(../obrazky/praha.png);
+    -fx-background-repeat: stretch;
+    -fx-background-size: 800 600;
+    -fx-background-position: center center;
+    -fx-background-size: cover;
+}

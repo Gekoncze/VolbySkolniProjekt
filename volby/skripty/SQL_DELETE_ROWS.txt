@@ -1,0 +1,13 @@
+DELETE FROM uzivatele;
+
+DELETE FROM strany;
+
+DELETE FROM kandidati;
+
+DELETE FROM hlasy;
+
+DELETE FROM preferencni_hlasy;
+
+DELETE FROM kraje;
+
+DELETE FROM okrsky;

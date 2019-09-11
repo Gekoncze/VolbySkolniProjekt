@@ -1,0 +1,2 @@
+INSERT INTO uzivatele (id, role, pristupove_jmeno, pristupove_heslo, jmeno, prijmeni, telefon)
+VALUES (uzivatele_seq.nextval, 0, 'admin', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 'Daniel', 'Tichy', '123 456 789')

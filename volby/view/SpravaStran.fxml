@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane prefHeight="600.0" prefWidth="800.0" vgap="8.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="volby.controller.SpravaStranController">
+   <columnConstraints>
+      <ColumnConstraints fillWidth="false" hgrow="NEVER" maxWidth="16.0" minWidth="0.0" prefWidth="16.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+      <ColumnConstraints fillWidth="false" hgrow="NEVER" maxWidth="16.0" minWidth="0.0" prefWidth="16.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints fillHeight="false" maxHeight="16.0" minHeight="0.0" prefHeight="16.0" vgrow="NEVER" />
+      <RowConstraints fillHeight="false" vgrow="NEVER" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints fillHeight="false" vgrow="NEVER" />
+      <RowConstraints fillHeight="false" maxHeight="16.0" minHeight="0.0" prefHeight="16.0" vgrow="NEVER" />
+   </rowConstraints>
+   <children>
+      <GridPane hgap="8.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <columnConstraints>
+          <ColumnConstraints fillWidth="false" hgrow="NEVER" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints fillWidth="false" hgrow="NEVER" />
+            <ColumnConstraints fillWidth="false" hgrow="NEVER" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints fillHeight="false" vgrow="NEVER" />
+        </rowConstraints>
+         <children>
+            <Label text="Správa stran" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+               <effect>
+                  <DropShadow color="WHITE" spread="0.61" />
+               </effect>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#zpet" text="Zpět" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.valignment="BOTTOM" />
+            <Label text="Přihlášen:" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="BOTTOM" />
+            <Label fx:id="uzivatel" text="N/A" GridPane.columnIndex="2" GridPane.valignment="BOTTOM" />
+         </children>
+      </GridPane>
+      <SplitPane dividerPositions="0.5" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <items>
+            <GridPane hgap="8.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                <RowConstraints fillHeight="false" vgrow="NEVER" />
+              </rowConstraints>
+               <children>
+                  <TableView fx:id="tableStrany" editable="true" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2">
+                    <columns>
+                      <TableColumn fx:id="poradoveCisloStranyColumn" prefWidth="50.0" text="Pořadové číslo" />
+                      <TableColumn fx:id="zkratkaStranyColumn" prefWidth="108.0" text="Zkratka" />
+                        <TableColumn fx:id="celyNazevStranyColumn" prefWidth="128.0" text="Celý název" />
+                        <TableColumn fx:id="barvaStranyColumn" editable="false" prefWidth="92.0" text="Barva" />
+                    </columns>
+                  </TableView>
+               </children>
+            </GridPane>
+            <GridPane hgap="8.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                <RowConstraints fillHeight="false" vgrow="NEVER" />
+              </rowConstraints>
+               <children>
+                  <TableView fx:id="tableKandidati" editable="true" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2">
+                    <columns>
+                      <TableColumn fx:id="poradoveCisloKandidataColumn" prefWidth="101.0" text="Pořadové číslo" />
+                      <TableColumn fx:id="jmenoKandidataColumn" prefWidth="76.0" text="Jméno kandidáta" />
+                        <TableColumn fx:id="prijmeniKandidataColumn" prefWidth="82.0" text="Příjmení kandidáta" />
+                        <TableColumn fx:id="krajKandidataColumn" prefWidth="119.0" text="Kraj" />
+                    </columns>
+                  </TableView>
+               </children>
+            </GridPane>
+         </items>
+      </SplitPane>
+      <GridPane hgap="8.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+        <columnConstraints>
+          <ColumnConstraints fillWidth="false" hgrow="NEVER" />
+            <ColumnConstraints fillWidth="false" hgrow="NEVER" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="0.0" prefWidth="0.0" />
+            <ColumnConstraints fillWidth="false" hgrow="NEVER" />
+            <ColumnConstraints fillWidth="false" hgrow="NEVER" />
+            <ColumnConstraints fillWidth="false" hgrow="NEVER" />
+          <ColumnConstraints fillWidth="false" hgrow="NEVER" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints fillHeight="false" vgrow="NEVER" />
+        </rowConstraints>
+         <children>
+            <Button mnemonicParsing="false" onAction="#odstranitStranu" text="Odstranit stranu" />
+            <Button mnemonicParsing="false" onAction="#odstranitKandidata" text="Odstranit kandidáta" GridPane.columnIndex="1" />
+            <Button mnemonicParsing="false" onAction="#ulozit" text="Uložit" GridPane.columnIndex="6" />
+            <Button mnemonicParsing="false" onAction="#novyKandidat" text="Nový kandidát" GridPane.columnIndex="5" />
+            <Button mnemonicParsing="false" onAction="#novaStrana" text="Nová strana" GridPane.columnIndex="4" />
+            <Button mnemonicParsing="false" onAction="#zmenitBarvu" text="Změna barvy" GridPane.columnIndex="3" />
+         </children>
+      </GridPane>
+   </children>
+</GridPane>

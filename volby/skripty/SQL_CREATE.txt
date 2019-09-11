@@ -1,0 +1,86 @@
+CREATE TABLE uzivatele
+(
+  id number(12) NOT NULL,
+  pristupove_jmeno varchar(32) NOT NULL,
+  pristupove_heslo varchar(128) NOT NULL,
+  jmeno varchar2(32) NOT NULL,
+  prijmeni varchar2(32) NOT NULL,
+  telefon varchar2(16) NOT NULL,
+  role number(1) NOT NULL,
+  CONSTRAINT uzivatele_pk PRIMARY KEY (id)
+);
+
+CREATE SEQUENCE uzivatele_seq MINVALUE 1 MAXVALUE 100000000000
+  START WITH 1 INCREMENT BY 1 CACHE 2;
+
+CREATE TABLE strany
+(
+  id number(12) NOT NULL,
+  zkratka varchar2(32) NOT NULL,
+  cely_nazev varchar2(1024) NOT NULL,
+  poradove_cislo number(4) NOT NULL,
+  barva varchar2(8) NOT NULL,
+  CONSTRAINT strany_pk PRIMARY KEY (id)
+);
+
+CREATE SEQUENCE strany_seq MINVALUE 1 MAXVALUE 100000000000
+  START WITH 1 INCREMENT BY 1 CACHE 2;
+
+CREATE TABLE kandidati
+(
+  id number(12) NOT NULL,
+  jmeno varchar2(32) NOT NULL,
+  prijmeni varchar2(32) NOT NULL,
+  strana_id number(12) NOT NULL,
+  kraj_id number(12) NOT NULL,
+  poradove_cislo number(4) NOT NULL,
+  CONSTRAINT kandidati_pk PRIMARY KEY (id)
+);
+
+CREATE SEQUENCE kandidati_seq MINVALUE 1 MAXVALUE 100000000000
+  START WITH 1 INCREMENT BY 1 CACHE 2;
+
+CREATE TABLE hlasy
+(
+  id number(12) NOT NULL,
+  strana_id number(12) NOT NULL,
+  uzivatel_id number(12) NOT NULL,
+  okrsek_id number(12) NOT NULL,
+  cas_vytvoreni timestamp(6) NOT NULL,
+  CONSTRAINT hlasy_pk PRIMARY KEY (id)
+);
+
+CREATE SEQUENCE hlasy_seq MINVALUE 1 MAXVALUE 100000000000
+  START WITH 1 INCREMENT BY 1 CACHE 2;
+
+CREATE TABLE preferencni_hlasy
+(
+  id number(12) NOT NULL,
+  hlas_id number(12) NOT NULL,
+  kandidat_id number(12) NOT NULL,
+  CONSTRAINT preferencni_hlasy_pk PRIMARY KEY (id)
+);
+
+CREATE SEQUENCE preferencni_hlasy_seq MINVALUE 1 MAXVALUE 100000000000
+  START WITH 1 INCREMENT BY 1 CACHE 2;
+
+CREATE TABLE kraje
+(
+  id number(12) NOT NULL,
+  nazev varchar2(32) NOT NULL,
+  CONSTRAINT kraje_pk PRIMARY KEY (id)
+);
+
+CREATE SEQUENCE kraje_seq MINVALUE 1 MAXVALUE 100000000000
+  START WITH 1 INCREMENT BY 1 CACHE 2;
+
+CREATE TABLE okrsky
+(
+  id number(12) NOT NULL,
+  cislo number(9) NOT NULL,
+  kraj_id number(12) NOT NULL,
+  CONSTRAINT okrsky_pk PRIMARY KEY (id)
+);
+
+CREATE SEQUENCE okrsky_seq MINVALUE 1 MAXVALUE 100000000000
+  START WITH 1 INCREMENT BY 1 CACHE 2;
